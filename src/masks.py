@@ -14,7 +14,7 @@ def get_mask_card_number(card_number: int) -> str:
 def get_mask_account(account_number: int) -> str:
     """озвращает маску номера счета в формате **XXXX"""
     account_str = str(account_number)
-    if len(account_str) == 16 and account_str.isdigit():
+    if len(account_str) == 20 and account_str.isdigit():
         # Создаем маску, оставляя видимыми только последние 4 цифры
         masked_card = f"**{account_str[-4:]}"
         return masked_card
