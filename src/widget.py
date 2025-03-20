@@ -1,5 +1,7 @@
 from datetime import datetime
-from masks import get_mask_card_number, get_mask_account  # Импортируем функции из masks.py
+
+from masks import get_mask_account  # Импортируем функции из masks.py
+from masks import get_mask_card_number
 
 # Используем импортированные функции
 print("Maestro", get_mask_card_number(1596837868705199))
