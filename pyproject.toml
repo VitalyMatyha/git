@@ -20,6 +20,7 @@ mypy = "^1.15.0"
 black = "^25.1.0"
 isort = "^6.0.1"
 flake8 = "^7.1.2"
+packages = [{ include = "homework_bank" }]
 
 [tool.mypy]
 disallow_untyped_defs = true
