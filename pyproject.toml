@@ -3,12 +3,12 @@ name = "homework_bank"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "Your Name", email = "you@example.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "requests (>=2.32.3,<3.0.0)"
+    "requests>=2.32.3,<3.0.0"
 ]
 
 [build-system]
@@ -16,11 +16,10 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.group.lint.dependencies]
-mypy = "^1.15.0"
-black = "^25.1.0"
-isort = "^6.0.1"
-flake8 = "^7.1.2"
-packages = [{ include = "homework_bank" }]
+black = "^23.1"
+flake8 = "^6.0"
+mypy = "^1.2"
+isort = "^5.11"
 
 [tool.mypy]
 disallow_untyped_defs = true
