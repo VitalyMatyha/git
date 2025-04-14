@@ -1,5 +1,5 @@
 import pytest
-from your_package.masks import get_mask_card_number, get_mask_account
+from src.masks import get_mask_card_number, get_mask_account
 
 @pytest.mark.parametrize("card,expected", [
     ("1234567812345678", "1234 56** **** 5678"),
@@ -14,4 +14,3 @@ def test_get_mask_card_number(card, expected):
 ])
 def test_get_mask_account(account, expected):
     assert get_mask_account(account) == expected
-

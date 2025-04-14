@@ -1,4 +1,4 @@
-from your_package.widget import mask_account_card, get_date
+from src.widget import mask_account_card, get_date
 import pytest
 
 @pytest.mark.parametrize("input_data,expected", [
