@@ -29,3 +29,5 @@ def get_date(date_str: str) -> str:
         return date_obj.strftime("%d.%m.%Y")
     except ValueError:
         return "Invalid date format. Please use the format YYYY-MM-DDTHH:MM:SS.ssssss."
+
+#Изменения
