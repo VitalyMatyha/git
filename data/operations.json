@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "amount": "100",
+    "currency": "USD",
+    "description": "Payment"
+  },
+  {
+    "id": 2,
+    "amount": "5000",
+    "currency": "RUB",
+    "description": "Salary"
+  }
+]
