@@ -5,9 +5,9 @@ import os
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-log_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'logs', 'masks.log')
-file_handler = logging.FileHandler(log_path, mode='w', encoding='utf-8')
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+log_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "logs", "masks.log")
+file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
