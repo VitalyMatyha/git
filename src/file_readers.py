@@ -9,7 +9,7 @@ def read_transactions_from_csv(transactions: str) -> List[Dict]:
     Читает CSV-файл и возвращает список транзакций.
 
     Args:
-        filepath (str): Путь к CSV-файлу.
+        transactions (str): Путь к CSV-файлу.
 
     Returns:
         List[Dict]: Список транзакций.
@@ -26,7 +26,7 @@ def read_transactions_from_excel(transactions_excel: str) -> List[Dict]:
     Читает Excel-файл и возвращает список транзакций.
 
     Args:
-        filepath (str): Путь к Excel-файлу (.xlsx).
+        transactions_excel (str): Путь к Excel-файлу (.xlsx).
 
     Returns:
         List[Dict]: Список транзакций.
