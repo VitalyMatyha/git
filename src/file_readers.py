@@ -1,5 +1,7 @@
+from typing import Dict
+from typing import List
+
 import pandas as pd
-from typing import List, Dict
 
 
 def read_transactions_from_csv(transactions: str) -> List[Dict]:
@@ -14,7 +16,7 @@ def read_transactions_from_csv(transactions: str) -> List[Dict]:
     """
     try:
         df = pd.read_csv(transactions)
-        return df.to_dict(orient='records')
+        return df.to_dict(orient="records")
     except Exception as e:
         return []
 
@@ -31,6 +33,6 @@ def read_transactions_from_excel(transactions_excel: str) -> List[Dict]:
     """
     try:
         df = pd.read_excel(transactions_excel)
-        return df.to_dict(orient='records')
+        return df.to_dict(orient="records")
     except Exception as e:
         return []
