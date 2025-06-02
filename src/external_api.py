@@ -1,8 +1,8 @@
 import os
-import requests
 from typing import Dict
+
+import requests
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
@@ -23,14 +23,8 @@ def convert_to_rub(transaction: Dict) -> float:
 
     if currency in ("USD", "EUR"):
         url = f"https://api.apilayer.com/exchangerates_data/convert"
-        params = {
-            "to": "RUB",
-            "from": currency,
-            "amount": amount
-        }
-        headers = {
-            "apikey": API_KEY
-        }
+        params = {"to": "RUB", "from": currency, "amount": amount}
+        headers = {"apikey": API_KEY}
 
         response = requests.get(url, params=params, headers=headers)
         if response.status_code == 200:

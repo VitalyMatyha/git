@@ -12,6 +12,7 @@ print(get_mask_account(35383033474447895560))
 print(get_mask_account(64686473678894779589))
 print(get_mask_account(73654108430135874305))
 
+
 def get_date(date_str: str) -> str:
     """
     Convert a date string from ISO format to the format DD.MM.YYYY.
@@ -30,4 +31,5 @@ def get_date(date_str: str) -> str:
     except ValueError:
         return "Invalid date format. Please use the format YYYY-MM-DDTHH:MM:SS.ssssss."
 
-#Изменения
+
+# Изменения

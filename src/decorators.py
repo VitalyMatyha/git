@@ -1,6 +1,7 @@
 import logging
 from functools import wraps
-from typing import Callable, Any
+from typing import Any
+from typing import Callable
 
 
 def log(filename: str = None):
@@ -9,10 +10,11 @@ def log(filename: str = None):
     Если указан, лог записывается в файл. Если не указан — выводится в консоль.
     Лог содержит имя функции, успешный результат или информацию об ошибке с входными параметрами.
     """
+
     def decorator(func: Callable) -> Callable:
         logger = logging.getLogger(func.__name__)
         logger.setLevel(logging.INFO)
-        formatter = logging.Formatter('%(message)s')
+        formatter = logging.Formatter("%(message)s")
 
         if filename:
             handler = logging.FileHandler(filename)
@@ -33,4 +35,5 @@ def log(filename: str = None):
                 raise
 
         return wrapper
+
     return decorator
