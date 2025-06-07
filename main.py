@@ -10,11 +10,11 @@ print(sort_by_date(
 print(get_mask_card_number(1934567386528468))
 print(get_mask_account(1934567386528468))
 
-from src.json_reader import read_json_file
-from src.csv_reader import read_csv_file
-from src.xlsx_reader import read_excel_file
-from src.utils import filter_by_status, filter_by_currency, sort_by_date
-from src.search import search_by_description, count_transaction_categories
+from src.utils import read_json_file
+from src.file_readers import read_transactions_from_csv
+from src.file_readers import read_transactions_from_excel
+from src.processing import filter_by_state, filter_by_currency, sort_by_date
+from src.search import search_transactions_by_description, count_transaction_categories
 
 
 def main() -> None:
@@ -30,10 +30,10 @@ def main() -> None:
         transactions = read_json_file(file_path)
     elif data_source == "2":
         file_path = input("Введите путь к CSV-файлу: ")
-        transactions = read_csv_file(file_path)
+        transactions = read_transactions_from_csv(file_path)
     elif data_source == "3":
         file_path = input("Введите путь к Excel-файлу: ")
-        transactions = read_excel_file(file_path)
+        transactions = read_transactions_from_excel(file_path)
     else:
         print("Некорректный ввод.")
         return
@@ -46,7 +46,7 @@ def main() -> None:
             break
         print(f"Статус '{status}' недоступен. Попробуйте снова.")
 
-    transactions = filter_by_status(transactions, status)
+    transactions = filter_by_state(transactions, status)
 
     if not transactions:
         print("Не найдено ни одной транзакции с указанным статусом.")
@@ -65,7 +65,7 @@ def main() -> None:
     # Поиск по описанию
     if input("Отфильтровать по слову в описании? (Да/Нет): ").lower() == "да":
         keyword = input("Введите слово: ")
-        transactions = search_by_description(transactions, keyword)
+        transactions = search_transactions_by_description(transactions, keyword)
 
     if not transactions:
         print("Не найдено ни одной транзакции, подходящей под условия.")
